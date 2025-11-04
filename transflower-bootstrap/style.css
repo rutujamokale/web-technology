@@ -1,0 +1,101 @@
+/* ===== Transflower Theme ===== */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Override Bootstrap colors */
+:root {
+  --bs-primary: #e91e63;       /* blossom pink */
+  --bs-secondary: #4caf50;     /* leaf green */
+  --bs-warning: #ffeb3b;       /* sunshine yellow */
+}
+
+/* Navbar tweak */
+.navbar {
+  background-color: var(--bs-primary) !important;
+}
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+.navbar .nav-link:hover {
+  color: var(--bs-warning) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+  background-color: transcluent pink;
+  border-color: #c2185b;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease-in-out;
+}
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+}
+
+/* .carousel-caption h5,
+.carousel-caption p {
+  background-color: rgba(233, 30, 99, 0.6); /* translucent pink 
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block;
+  width: auto;
+  margin: 10px 0;  
+} */
+
+.carousel-item {
+  position: relative;
+  text-align: center;
+}
+
+.carousel-item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10px; /* adjust to move up/down */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+  color: white;
+  background: rgba(233, 30, 99, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0; /* space between lines */
+  display: inline-block;
+}
+
+
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.nav-link.active {
+  color: var(--bs-warning) !important;
+  font-weight: 600;
+}
+/* Footer */
+footer {
+  background-color: var(--bs-secondary);
+}
