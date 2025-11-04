@@ -11,9 +11,9 @@ body {
 }
 
 /* Navbar tweak */
-.navbar {
+/* .navbar {
   background-color: var(--bs-primary) !important;
-}
+} */
 .navbar .nav-link {
   color: #fff !important;
   font-weight: 500;
@@ -46,6 +46,23 @@ body {
   background-color: var(--bs-primary);
   color: #fff;
   border-color: var(--bs-primary);
+}
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background-color: #c2185b;
+}
+
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 /* .carousel-caption h5,
