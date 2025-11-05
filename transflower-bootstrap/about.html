@@ -5,95 +5,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transflower Store</title>
 
-  <!-- ✅ Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    /* 🌸 Global */
+    body {
+      font-family: "Poppins", sans-serif;
+     background: linear-gradient(to right, lightblue, white);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 🌺 Navbar */
+    .navbar {
+      background-color: #e91e63;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+    .nav-link:hover {
+      color: #ffe6ef !important;
+    }
+
+    /* 🌼 About Section */
+    .about-section {
+      background: linear-gradient(to right, #fff, #f8e8ef);
+      padding: 80px 0;
+    }
+    .about-section h2 {
+      color: #e91e63;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #555;
+    }
+    .about-section img {
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .about-section img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 💬 Testimonials */
+    .testimonials {
+      background-color: #fdf5f8;
+      padding: 80px 0;
+    }
+    .testimonial-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 30px;
+      transition: 0.3s ease;
+    }
+    .testimonial-box:hover {
+      transform: translateY(-5px);
+    }
+    .testimonial-box p {
+      font-style: italic;
+      color: #444;
+    }
+    .testimonial-box footer {
+      color: #e91e63;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    /* 🌷 Footer */
+    footer {
+      background-color: #4caf50;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 60px;
+    }
+  </style>
 </head>
+
 <body>
-  <!-- 🌼 Your Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #e91e63;">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">
-      <i class="bi bi-flower1 me-2"></i>Transflower
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- 🌸 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-flower1 me-2"></i>Transflower</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-basket"></i> Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-basket"></i> Products</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-info-circle"></i> About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-<section class="py-5 text-center">
-  <div class="container">
-    <div class="row align-items-center">
+  </nav>
 
-      <!-- Image Column -->
-      <div class="col-md-6 image-bg p-3">
-        <img src="images/team.jpg" class="img-fluid rounded w-75" alt="Our Team">
+  <!-- 🌼 About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <img src="images/team.jpg" alt="Our Team" class="img-fluid  w-75" >
+        </div>
+        <div class="col-md-6">
+          <h2>About Transflower Store</h2>
+          <p>Founded in 2020, Transflower Store started with a dream — to bring joy to people through flowers. Our expert florists handpick each bloom from trusted local farms to ensure freshness and fragrance.</p>
+          <p>We believe that flowers have the power to speak emotions — love, joy, gratitude, and comfort. Each bouquet is crafted with creativity, care, and passion to make your moments memorable.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Text Column -->
-      <div class="col-md-6 text-bg p-3">
-        <h2>About Transflower Store</h2>
-        <p>Founded in 2020, Transflower Store started with a simple dream — to make the world a little happier with flowers. Our team of florists handpick fresh blooms from local farms and deliver them with love.</p>
-        <p>We believe flowers speak a universal language — of emotions, of connections, of beauty. Each bouquet we deliver is crafted with care and purpose.</p>
+  <!-- 💬 Testimonials -->
+  <section class="testimonials text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-5 text-danger">What Our Customers Say</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-box">
+            <p>“Transflower never disappoints! My anniversary bouquet was perfect.”</p>
+            <footer>— Sneha K.</footer>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-box">
+            <p>“Fresh flowers and quick delivery — absolutely loved it!”</p>
+            <footer>— Rahul M.</footer>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-box">
+            <p>“The best flower store in Pune! Highly recommended.”</p>
+            <footer>— Aditi S.</footer>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+  <section class="container my-5">
+  <h2 class="text-center mb-4">Frequently Asked Questions</h2>
 
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+          How long does delivery take?
+        </button>
+      </h2>
+      <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We deliver within 24 hours for all Pune city orders and 2–3 days for other cities.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+          Can I customize my bouquet?
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Absolutely! You can choose flower types, wrapping styles, and message cards.
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+  <!-- 🌷 Footer -->
+  <footer>
+    <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💗 using Bootstrap</p>
+  </footer>
 
-  <!-- Footer -->
-<footer class="footer-bar text-center text-white py-3">
-  <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💗 using Bootstrap</p>
-</footer>
-
-
-<!-- CSS -->
-<style>
-
-
- section {
-background: linear-gradient(to right, lightblue, white);
-  padding: 60px 0;
-}
-
-section img {
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-section h2, section p {
-  color: #0f0a0a; /* white text on navy */
-}
- 
-  .footer-bar {
-  background-color: #4caf50;
-    width: 100%;               
-    position: relative;        
-  }
-
-  body {
-    min-height: 100vh;
-    text-align: center;
-    flex-direction: column;
-  }
-
-  footer {
-    margin-top: auto;
-  }
-</style>
-
-  <!-- ✅ Bootstrap JS (includes Popper) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
