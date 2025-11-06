@@ -103,6 +103,20 @@ body {
   margin: 5px 0; /* space between lines */
   display: inline-block;
 }
+h1 {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.lead {
+  color: #555;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
 
 
 section {
