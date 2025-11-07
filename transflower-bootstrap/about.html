@@ -1,176 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transflower Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Transflower Store</title>
 
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Bootstrap & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <style>
-    /* 🌸 Global */
-    body {
-      font-family: "Poppins", sans-serif;
-     background: linear-gradient(to right, lightblue, white);
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+  /* 🌸 Global Styles */
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #ffe0ef, #fff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  body {
+  font-family: "Poppins", sans-serif;
+  /* Full-page background image */
+  background: linear-gradient(rgba(255, 20, 147, 0.3), rgba(255, 20, 147, 0.1)),
+           url( "https://plus.unsplash.com/premium_photo-1673435845920-7dd594ab70f8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjBhbmQlMjByZWR8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000");
+  color: #fff; /* Text color for contrast */
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 
-    /* 🌺 Navbar */
-    .navbar {
-      background-color: #e91e63;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    }
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-    .nav-link {
-      color: #fff !important;
-      font-weight: 500;
-      margin-left: 10px;
-    }
-    .nav-link:hover {
-      color: #ffe6ef !important;
-    }
 
-    /* 🌼 About Section */
-    .about-section {
-      background: linear-gradient(to right, #fff, #f8e8ef);
-      padding: 80px 0;
-    }
-    .about-section h2 {
-      color: #e91e63;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .about-section p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #555;
-    }
-    .about-section img {
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .about-section img:hover {
-      transform: scale(1.05);
-    }
+  /* 🌺 Navbar */
+  .navbar {
+    background: #8e44ad;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+  }
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.6rem;
+    transition: transform 0.3s;
+  }
+  .navbar-brand:hover {
+    transform: scale(1.1);
+  }
+  .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 10px;
+    transition: color 0.3s;
+  }
+  .nav-link:hover {
+    color: #ffe0f4 !important;
+  }
+  .btn-light {
+    color: #ff1493;
+    font-weight: 600;
+  }
+  .btn-outline-light:hover {
+    background-color: #fff;
+    color: #ff1493 !important;
+  }
 
-    /* 💬 Testimonials */
-    .testimonials {
-      background-color: #fdf5f8;
-      padding: 80px 0;
-    }
-    .testimonial-box {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      padding: 30px;
-      transition: 0.3s ease;
-    }
-    .testimonial-box:hover {
-      transform: translateY(-5px);
-    }
-    .testimonial-box p {
-      font-style: italic;
-      color: #444;
-    }
-    .testimonial-box footer {
-      color: #e91e63;
-      font-weight: 600;
-      margin-top: 15px;
-    }
+  /* 🌼 Hero/About Section */
+  .about-section {
+    background: url(" https://png.pngtree.com/background/20250102/original/pngtree-cb-background-hd-2022-download-picsart-and-snapseed-photo-editing-picture-image_15546523.jpg");
+    padding: 100px 0;
+    border-radius: 50px 50px 0 0;
+  }
+  .about-section h2 {
+    color:blue;
+    font-weight: 800;
+    margin-bottom: 25px;
+    font-size: 2.8rem;
+  }
+  .about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #0d0d0d;
+  }
+  .about-section img {
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(255,20,147,0.3);
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+  .about-section img:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 12px 35px rgba(255,20,147,0.4);
+  }
 
-    /* 🌷 Footer */
-    footer {
-      background-color: #4caf50;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 60px;
-    }
-  </style>
+  /* 💬 Testimonials */
+  .testimonials {
+    background: linear-gradient(to right, #fff, #ffe0ef);
+      background-image:url("https://as2.ftcdn.net/v2/jpg/12/14/56/39/1000_F_1214563951_Y4zu0SlG7GGbx8lz1cROJBMGU8bFgomK.jpg");
+    padding: 100px 0;
+    border-radius: 0 0 50px 50px;
+  }
+  .testimonials h2 {
+    color: #ff1493;
+    font-weight: 800;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+  }
+  .testimonial-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(255,20,147,0.15);
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonial-box::before {
+    content: "❝";
+    font-size: 4rem;
+    color: #ffcce4;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    opacity: 0.2;
+  }
+  .testimonial-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(255,20,147,0.25);
+  }
+  .testimonial-box footer {
+    color: #ff1493;
+    font-weight: 700;
+    margin-top: 15px;
+  }
+
+  /* 🌷 FAQ */
+  #faqAccordion .accordion-button {
+    background-color: #ffe0ef;
+    color: #ff1493;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  #faqAccordion .accordion-button:hover {
+    background-color: #ffcce4;
+  }
+  #faqAccordion .accordion-body {
+    background-color: #fff;
+    color: #444;
+  }
+
+  /* 🌺 Footer */
+  footer {
+    background: #8e44ad;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.95rem;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+  }
+
+  /* ✨ Scroll Animation */
+  [data-aos] {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+</style>
 </head>
-
 <body>
-  <!-- 🌸 Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html"><i class="bi bi-flower1 me-2"></i>Transflower</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-basket"></i> Products</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-info-circle"></i> About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
-        
-        </ul>
-           <div class="d-flex ms-3">
-        <a href="login.html" class="btn btn-light btn-sm rounded-pill me-2 px-3">
-          <i class="bi bi-box-arrow-in-right"></i> Login
-        </a>
-        <a href="register.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
-          <i class="bi bi-person-plus"></i> Register
-        </a>
+<!-- 🌸 Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><i class="bi bi-flower1 me-2"></i>Transflower</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-basket"></i> Products</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-info-circle"></i> About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html"><i class="bi bi-person-circle"></i> Profile</a></li>
+        <li class="nav-item ms-3">
+          <a href="login.html" class="btn btn-light btn-sm rounded-pill px-3">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+        </li>
+        <li class="nav-item ms-2">
+          <a href="register.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+            <i class="bi bi-person-plus"></i> Register
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- 🌼 About Section -->
+<section class="about-section mt-5" data-aos="fade-up">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1596073419667-9d77d59f033f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cm9zZSUyMGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600" alt="Our Team" class="img-fluid w-75">
       </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h2>About Transflower Store</h2>
+        <p>Founded in 2020, Transflower Store started with a dream — to bring joy to people through flowers. Our expert florists handpick each bloom from trusted local farms to ensure freshness and fragrance.</p>
+        <p>We believe that flowers have the power to speak emotions — love, joy, gratitude, and comfort. Each bouquet is crafted with creativity, care, and passion to make your moments memorable.</p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- 🌼 About Section -->
-  <section class="about-section">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-md-6">
-          <img src="images/team.jpg" alt="Our Team" class="img-fluid  w-75" >
+<!-- 💬 Testimonials -->
+<section class="testimonials text-center" data-aos="fade-up">
+  <div class="container">
+    <h2 class="fw-bold mb-5">💐 What Our Customers Say</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="testimonial-box">
+          <p>“Transflower never disappoints! My anniversary bouquet was perfect.”</p>
+          <footer>— Sneha K.</footer>
         </div>
-        <div class="col-md-6">
-          <h2>About Transflower Store</h2>
-          <p>Founded in 2020, Transflower Store started with a dream — to bring joy to people through flowers. Our expert florists handpick each bloom from trusted local farms to ensure freshness and fragrance.</p>
-          <p>We believe that flowers have the power to speak emotions — love, joy, gratitude, and comfort. Each bouquet is crafted with creativity, care, and passion to make your moments memorable.</p>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="testimonial-box">
+          <p>“Fresh flowers and quick delivery — absolutely loved it!”</p>
+          <footer>— Rahul M.</footer>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="testimonial-box">
+          <p>“The best flower store in Pune! Highly recommended.”</p>
+          <footer>— Aditi S.</footer>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 💬 Testimonials -->
-  <section class="testimonials text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-5 text-danger">What Our Customers Say</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="testimonial-box">
-            <p>“Transflower never disappoints! My anniversary bouquet was perfect.”</p>
-            <footer>— Sneha K.</footer>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="testimonial-box">
-            <p>“Fresh flowers and quick delivery — absolutely loved it!”</p>
-            <footer>— Rahul M.</footer>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="testimonial-box">
-            <p>“The best flower store in Pune! Highly recommended.”</p>
-            <footer>— Aditi S.</footer>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="container my-5">
-  <h2 class="text-center mb-4">Frequently Asked Questions</h2>
-
+<!-- 🌸 FAQ -->
+<section class="container my-5" data-aos="fade-up">
+  <h2 class="text-center mb-4" style="color:#ff1493;">Frequently Asked Questions</h2>
   <div class="accordion" id="faqAccordion">
     <div class="accordion-item">
       <h2 class="accordion-header">
@@ -184,7 +255,6 @@
         </div>
       </div>
     </div>
-
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
@@ -200,12 +270,16 @@
   </div>
 </section>
 
-  <!-- 🌷 Footer -->
-  <footer>
-    <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💗 using Bootstrap</p>
-  </footer>
+<!-- 🌷 Footer -->
+<footer data-aos="fade-in">
+  <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💖 using Bootstrap & AOS</p>
+</footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
 </body>
 </html>

@@ -1,57 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transflower Store</title>
 
   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Custom CSS (optional) -->
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-<style>
-body{
-    background: linear-gradient(to right, lightblue, white);
-}
-</style>
-<style>
-  .row.g-tight {
-    --bs-gutter-x: 0.5rem;  
-    --bs-gutter-y: 0.5rem;  
-  }
-  .navbar-nav .nav-link {
-    transition: color 0.3s, transform 0.3s;
-  }
-  .navbar-nav .nav-link:hover {
-    color: #ffeef7;
-    transform: scale(1.05);
-  }
+  <style>
+    /* ---------- Body & Background ---------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1699562744896-7d49690b180d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-  /* Button glow on hover */
-  .btn:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-  }
-</style>
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
 
+    /* Floating butterflies */
+    @keyframes floatButterfly {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+      50% { transform: translateY(-20px) rotate(15deg); opacity: 1; }
+      100% { transform: translateY(0px) rotate(-15deg); opacity: 0.8; }
+    }
+    .butterfly {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: floatButterfly 6s ease-in-out infinite;
+    }
+    .butterfly:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .butterfly:nth-child(2) { top: 50%; left: 70%; animation-delay: 2s; }
+    .butterfly:nth-child(3) { top: 70%; left: 40%; animation-delay: 4s; }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      background:#8e44ad;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+    .nav-link {
+      color: #fff !important;
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    .nav-link:hover {
+      color: #ffebee !important;
+      transform: scale(1.1);
+    }
+
+    /* ---------- Carousel ---------- */
+    #flowerCarousel {
+      height: 90vh;
+    }
+    #flowerCarousel .carousel-item {
+      height: 90vh;
+    }
+    #flowerCarousel img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(75%);
+    }
+    #flowerCarousel .carousel-caption {
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero-section {
+      background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,230,250,0.85));
+      border-radius: 25px;
+      padding: 80px 30px;
+      margin: 60px auto;
+      width: 90%;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    .hero-section h1 {
+      color:#8e44ad;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px rgba(255,20,147,0.5);
+    }
+    .hero-section p {
+      color: #444;
+      font-size: 1.2rem;
+    }
+    .hero-section img {
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      transition: transform 0.4s;
+    }
+    .hero-section img:hover {
+      transform: scale(1.07) rotate(1deg);
+    }
+
+    /* ---------- Featured Flowers ---------- */
+    .featured-section {
+      background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,230,250,0.85));
+      border-radius: 25px;
+      padding: 80px 30px;
+      margin: 60px auto;
+      width: 90%;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .card {
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+    .card img {
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+    .card-title {
+      color:  #ff1493;
+      font-weight: 600;
+      text-shadow: 1px 1px 4px #ff1493;
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn-primary {
+      background-color: #ff1493;
+      border: none;
+      border-radius: 50px;
+      padding: 0.6rem 1.6rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255,20,147,0.4);
+    }
+    .btn-primary:hover {
+      background-color: #e60084;
+      box-shadow: 0 0 20px rgba(255,20,147,0.6);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #8e44ad;
+      color: white;
+      padding: 25px 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    }
+
+    /* ---------- Subtle Animations ---------- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-section, .featured-section, .carousel-caption {
+      animation: fadeInUp 1s ease forwards;
+    }
+  </style>
 </head>
-
 <body>
- 
-   <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #e91e63, #f06292); backdrop-filter: blur(6px);">
+  <!-- Floating Butterflies -->
+  <div class="butterfly"></div>
+  <div class="butterfly"></div>
+  <div class="butterfly"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: #b970d9; backdrop-filter: blur(6px);">
   <div class="container">
     <!-- Brand -->
     <a class="navbar-brand fw-bold" href="index.html">
@@ -70,6 +214,7 @@ body{
         <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-basket me-1"></i> Products</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i> Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html"><i class="bi bi-person-circle"></i> Profile</a></li>
       </ul>
 
       <!-- Right-side buttons -->
@@ -80,192 +225,109 @@ body{
         <a href="register.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
           <i class="bi bi-person-plus"></i> Register
         </a>
+       
       </div>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<!-- Carousel -->
-<div id="storeCarousel" class="carousel slide" data-bs-ride="carousel";>
+
+  <!-- Carousel -->
+  <div id="flowerCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" style="background:linear-gradient(to right, lightblue, white)";>
-    <img src="images/background.jpg" class="d-block w-75" alt="Slide 1">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Fresh Flowers Everyday</h5>
-        <p>Explore nature’s beauty with us!</p>
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1618411610011-fb3b7695a765?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1935"
+           class="d-block w-100"
+           alt="Fresh Flowers">
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1533907650686-70576141c030?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+           class="d-block w-100"
+           alt="Seasonal Specials">
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1728522034583-1caa3adbe2ae?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070">
+           class="d-block w-100"
+           alt=" beautiful flower">
+    </div>
+  </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#flowerCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#flowerCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center text-md-start">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right">
+          <h1>Fresh Flowers Delivered Daily 💜</h1>
+          <p class="lead mt-3">Order online and make every day bloom beautifully.</p>
+          <a href="#" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+        </div>
+        <div class="col-md-6 text-center" data-aos="fade-left">
+          <img src="images/hero.jpeg" class="img-fluid w-75" alt="Hero Image">
+        </div>
       </div>
     </div>
-    <div class="carousel-item" style="background:linear-gradient(to right, lightblue, white)";>
-      <img src="images/cosmos.jpg " class="d-block w-75 mx-auto" alt="Slide 2">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Seasonal Specials</h5>
-        <p>Freshly handpicked for every occasion.</p>
-      </div>
-    </div>
-   
-    <!-- Slide 3: Lily -->
-<div class="carousel-item" style="background: linear-gradient(to right, lightblue, white);">
-  <img src="https://static5.depositphotos.com/1008134/439/i/450/depositphotos_4394435-stock-photo-cosmos-flowers-in-sunset.jpg" class="d-block w-75 mx-auto" alt="Slide 3">
-  <div class="carousel-caption d-none d-md-block text-center">
-    <div style="background-color: rgba(255, 255, 255, 0.7); border-radius: 10px; display: inline-block; padding: 10px 20px;">
-      <h5 class="d-block mb-1 text-dark">Gift Happiness</h5>
-      <p class="d-block mb-0 text-dark">Send love wrapped in petals.</p>
-    </div>
-  </div>
-</div>
+  </section>
 
-<!-- Slide 4: Lotus -->
-<div class="carousel-item" style="background: linear-gradient(to right, lightblue, white);">
-  <img src="https://st3.depositphotos.com/29384342/33691/i/1600/depositphotos_336910288-stock-photo-cosmos-flowers-nature-sweet-background.jpg" class="d-block w-75 mx-auto" alt="Slide 4">
-  <div class="carousel-caption d-none d-md-block text-center">
-    <div style="background-color: rgba(255, 255, 255, 0.7); border-radius: 10px; display: inline-block; padding: 10px 20px;">
-      <h5 class="d-block mb-1 text-dark">Serene Lotus</h5>
-      <p class="d-block mb-0 text-dark">Bring peace and beauty into your home.</p>
-    </div>
-  </div>
-</div>
-<div class="carousel-item" style="background: linear-gradient(to right, lightblue, white);">
-  <img src="https://static.vecteezy.com/system/resources/previews/002/182/453/large_2x/cosmos-flower-background-free-photo.jpg" class="d-block w-75 mx-auto" alt="slide 5">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Night-flowering Jasmine</h5>
-    <p>Fill your surroundings with a divine evening fragrance.</p>
-  </div>
-</div>
-<div class="carousel-item" style="background: linear-gradient(to right, lightblue, white);">
-  <img src="data:image/jpeg;base64,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" class="d-block w-25 mx-auto" alt="Slide 6">
-  <div class="carousel-caption d-none d-md-block">
-    <h5>Arabian Jasmine</h5>
-    <p>Experience the sweet fragrance of pure elegance.</p>
-  </div>
-</div>
-
-  </div>
-  
-  <button class="carousel-control-prev" type="button" data-bs-target="#storeCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#storeCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-<section class="container my-5">
-  <div class="row align-items-center" style="background: linear-gradient(to right, lightblue, white);">
-    <div class="col-md-6 text-center text-md-start">
-      <h1>Fresh Flowers Delivered Daily 🌹</h1>
-      <p class="lead">Order online and make every day bloom beautifully.</p>
-      <button class="btn btn-danger btn-lg mt-3">Shop Now</button>
-    </div>
-    <div class="col-md-6 text-center">
-      <img src="images/hero.jpeg" class="img-fluid rounded-4 shadow w-75" alt="Hero Image">
-    </div>
-  </div>
-</section>
-
-<section class="py-5" style="background:linear-gradient(to right, lightblue, white)";>
-  <div class="container">
-    <h2 class="text-center mb-4">Our Featured Flowers</h2>
-    <div class="row g-tight ">
-      <div class="col-md-4 mb-2">
-        <div class="card w-75">
-          <img src="images/rose.jpg" class="card-img-top " alt="Flower">
-          <div class="card-body text-center">
-            <h5 class="card-title">Red Roses</h5>
-            <p class="card-text">Elegant bouquet for special moments.</p>
-            <a href="#" class="btn btn-primary">Buy Now</a>
+  <!-- Featured Flowers -->
+  <section class="featured-section text-center">
+    <div class="container">
+      <h2>Our Featured Flowers</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="card">
+            <img src="images/rose.jpg" alt="Red Roses">
+            <div class="card-body">
+              <h5 class="card-title">Red Roses</h5>
+              <p class="card-text">Elegant bouquet for special moments.</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="card">
+            <img src="images/tulip-delight.jpg" alt="Tulip Delight">
+            <div class="card-body">
+              <h5 class="card-title">Tulip Delight</h5>
+              <p class="card-text">Fresh tulips to brighten your day.</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="card">
+            <img src="images/lily.jpg" alt="Lily">
+            <div class="card-body">
+              <h5 class="card-title">Lily</h5>
+              <p class="card-text">Bring elegance and peace to your home.</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="col-md-4 mb-2">
-        <div class="card w-75" >
-          <img src="images/tulip-delight.jpg" class="card-img-top" alt="Flower">
-          <div class="card-body text-center">
-            <h5 class="card-title">Tulip Delight</h5>
-            <p class="card-text">Fresh tulips to brighten your day.</p>
-            <a href="#" class="btn btn-primary">Buy Now</a>
-          </div>
-        </div>
-      </div>
+  <!-- Footer -->
+  <footer class="text-center">
+    <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💜 using Bootstrap</p>
+  </footer>
 
-      <div class="col-md-4 mb-4">
-        <div class="card w-75">
-          <img src="images/lily.jpg" class="card-img-top" alt="Flower">
-          <div class="card-body text-center">
-            <h5 class="card-title">lily</h5>
-            <p class="card-text">Bring lily into your home.</p>
-            <a href="#" class="btn btn-primary">Buy Now</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-  <div class="card w-75">
-    <img src="images/lotus.jpeg" class="card-img-top" alt="Lotus">
-    <div class="card-body text-center">
-      <h5 class="card-title">Lotus</h5>
-      <p class="card-text">Bring serenity and beauty into your home.</p>
-      <a href="#" class="btn btn-primary">Buy Now</a>
-    </div>
-  </div>
-</div>
-  <div class="col-md-4 mb-4">
-  <div class="card w-75">
-    <img src="images/parijatak.avif" class="card-img-top" alt="Night-flowering Jasmine">
-    <div class="card-body text-center">
-      <h5 class="card-title">Night-flowering Jasmine</h5>
-      <p class="card-text">Add a gentle fragrance and beauty to your garden.</p>
-      <a href="#" class="btn btn-primary">Buy Now</a>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4 mb-4">
-  <div class="card w-75">
-    <img src="images/mogra.jpg" class="card-img-top" alt="Arabian Jasmine">
-    <div class="card-body text-center">
-      <h5 class="card-title">Arabian Jasmine</h5>
-      <p class="card-text">Experience the soothing fragrance of Mogra blossoms.</p>
-      <a href="#" class="btn btn-primary">Buy Now</a>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</section>
-<!-- Footer -->
-<footer class="text-center text-white py-3" style="background-color: var(--bs-secondary);">
-  <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💗 using Bootstrap</p>
-</footer>
-<!-- Contact Modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Contact Transflower Store</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="3" placeholder="Write your message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- Bootstrap JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
