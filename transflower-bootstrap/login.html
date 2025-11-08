@@ -3,33 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transflower Store </title>
+  <title>Transflower Store | Login</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
   <style>
-    body{
-    background: linear-gradient(to right, lightblue, white);
-    }
-     footer {
-      background: #ff1493;
-      color: white;
-      padding: 25px 0;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-      box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    /* Body Gradient Background */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #f5a6b9, #ffe6f0, #a1c4fd);
+      font-family: 'Segoe UI', sans-serif;
+
+      margin: 0;
     }
 
+    /* Navbar Styling */
+    nav.navbar {
+      background: linear-gradient(90deg, #ff416c, #ff4b2b);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav.navbar .nav-link {
+      color: white !important;
+      transition: color 0.3s;
+    }
+
+    nav.navbar .nav-link:hover {
+      color: #ffd6e0 !important;
+    }
+
+    /* Glassmorphism Card */
+    .login-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-card .card-header {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border-radius: 15px 15px 0 0;
+      color: white;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .form-control:focus {
+      border-color: #ff416c;
+      box-shadow: 0 0 5px rgba(255,65,108,0.5);
+    }
+
+    .btn-login {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255,65,108,0.4);
+    }
+
+    /* Footer Styling */
+    footer {
+      background: #ff1493;;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Toast positioning */
+    .toast-container {
+      z-index: 2000;
+    }
   </style>
 </head>
-<body class="bg-light">
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #e91e63;">
-   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">
-      <i class="bi bi-flower1 me-2"></i> Transflower store
-    </a> 
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-flower1 me-2"></i>Transflower</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-   
-</div>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
@@ -37,71 +114,53 @@
         <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="profile.html"><i class="bi bi-person-circle"></i> Profile</a></li>
-    
       </ul>
-       <div class="d-flex ms-3">
-        <a href="login.html" class="btn btn-light btn-sm rounded-pill me-2 px-3">
-          <i class="bi bi-box-arrow-in-right"></i> Login
-        </a>
-        <a href="register.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
-          <i class="bi bi-person-plus"></i> Register
-        </a>
-       
+      <div class="d-flex ms-3">
+        <a href="login.html" class="btn btn-light btn-sm rounded-pill me-2 px-3"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+        <a href="register.html" class="btn btn-outline-light btn-sm rounded-pill px-3"><i class="bi bi-person-plus"></i> Register</a>
       </div>
     </div>
   </div>
-</nav>    
+</nav>
 
-<div class="container vh-100 d-flex justify-content-center align-items-center">
-  <div class="col-md-4">
-    <div class="card shadow-lg">
-      <div class="card-header bg-danger text-white text-center">
-        <h4>Welcome Back 🌼</h4>
-      </div>
-      <div class="card-body">
-        <form id="loginForm" novalidate>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required>
-            <div class="invalid-feedback">Please enter a valid email.</div>
-          </div>
-        
-
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" required>
-            <div class="invalid-feedback">Please enter your password.</div>
-          </div>
-
-          <button type="submit" class="btn btn-danger w-100">Login</button>
-        </form>
-      </div>
+<!-- Login Form Card -->
+<div class="login-container">
+  <div class="login-card">
+    <div class="card-header">Welcome Back 🌼</div>
+    <div class="card-body">
+      <form id="loginForm" novalidate>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required>
+          <div class="invalid-feedback">Please enter your password.</div>
+        </div>
+        <button type="submit" class="btn btn-login w-100">Login</button>
+      </form>
     </div>
   </div>
 </div>
-<!-- Toast Container -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+
+<!-- Toast -->
+<div class="position-fixed bottom-0 end-0 p-3 toast-container">
   <div id="loginToast" class="toast align-items-center text-bg-success border-0" role="alert">
     <div class="d-flex">
-      <div class="toast-body">
-        Login successful! Welcome back 🌼
-      </div>
+      <div class="toast-body">Login successful! Welcome back 🌼</div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
     </div>
   </div>
 </div>
 
-<footer class="text-center text-white py-3" style=" position: fixed; bottom: 0; width: 100%; z-index: 10;">
-    <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💜 using Bootstrap</p>
+<!-- Footer -->
+<footer>
+  &copy; 2025 Transflower Store | Designed with 💜 using Bootstrap
 </footer>
 
-
-<!-- JS to Show Toast -->
-<script>
-  const toastEl = document.getElementById('loginToast');
-  const toast = new bootstrap.Toast(toastEl);
-  toast.show();
-</script>
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 (() => {
@@ -116,13 +175,12 @@
       loginForm.classList.add('was-validated');
       return;
     }
-  
     toast.show();
     loginForm.reset();
     loginForm.classList.remove('was-validated');
   });
 })();
 </script>
- 
+
 </body>
 </html>
