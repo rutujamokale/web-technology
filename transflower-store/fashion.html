@@ -51,11 +51,18 @@
     }
 
     footer {
-      background: linear-gradient(to right, #007bff, #00bcd4);
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
+    background: #001f4d;
+    color: white;
+    padding: 30px 0;
+}
+footer {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -92,7 +99,7 @@
       <!-- 1 -->
       <div class="col-md-3">
         <div class="card product-card">
-          <img src="https://images.unsplash.com/photo-1508742345712-0656a285ac27?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29tYW4lMjBpbiUyMHJlZCUyMGRyZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" class="card-img-top" alt="Dress">
+          <img src="https://images.unsplash.com/photo-1508742345712-0656a285ac27?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" class="card-img-top" alt="Dress">
           <div class="card-body text-center">
             <h5 class="card-title">Elegant Red Dress</h5>
             <p class="card-text">₹1,999</p>
@@ -286,7 +293,14 @@
 
   <!-- Footer -->
   <footer>
-    <p class="mb-0">&copy; 2025 Transflower Store | Designed with 💙</p>
+    <div class="container text-center">
+      <p class="mb-1">© 2025 <strong>Transflower Store</strong>. All Rights Reserved.</p>
+      <p>
+        <a href="about.html">About</a> | 
+        <a href="contact.html">Contact</a> | 
+        <a href="catalog.html">Shop</a>
+      </p>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
