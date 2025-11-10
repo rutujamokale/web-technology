@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,41 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
-    /* 🌸 Consistent Brand Colors (from index.html) */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
     :root {
       --brand-primary: #0d6efd;
       --brand-light: #eaf3ff;
       --brand-dark: #0a58ca;
+      --gradient1: linear-gradient(135deg, #0d6efd, #48a1ff);
+      --gradient2: linear-gradient(135deg, #eaf3ff, #d0e7ff);
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #eaf3ff, #ffffff);
+      background: var(--brand-light);
       color: #333;
     }
 
-    /* 🌸 Navbar */
+    /* Navbar */
     .navbar {
       background-color: var(--brand-primary);
     }
-    .navbar-brand, .nav-link {
+
+    .navbar-brand,
+    .nav-link {
       color: white !important;
     }
-    .nav-link:hover, .nav-link.active {
+
+    .nav-link:hover,
+    .nav-link.active {
       background-color: rgba(255, 255, 255, 0.2);
       border-radius: 6px;
     }
+
     .btn-login {
       background-color: #fff;
       color: var(--brand-primary);
@@ -43,128 +51,289 @@
       padding: 6px 18px;
       transition: all 0.3s ease;
     }
+
     .btn-login:hover {
       background-color: var(--brand-light);
       color: var(--brand-dark);
     }
 
-    /* 🌸 About Section */
-    .about-section {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 60px 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      margin-top: 60px;
-      margin-bottom: 60px;
+    /* Hero Section */
+    .hero-about {
+      background: var(--gradient1);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      border-radius: 0 0 60px 60px;
+      position: relative;
+      overflow: hidden;
+      animation: gradientBG 15s ease infinite;
     }
+
+    @keyframes gradientBG {
+      0% {
+        background: linear-gradient(135deg, #0d6efd, #48a1ff);
+      }
+
+      50% {
+        background: linear-gradient(135deg, #48a1ff, #0d6efd);
+      }
+
+      100% {
+        background: linear-gradient(135deg, #0d6efd, #48a1ff);
+      }
+    }
+
+    .hero-about h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-about p {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 60px 20px;
+    }
+
     .about-section h2 {
       color: var(--brand-primary);
       font-weight: 700;
       margin-bottom: 20px;
+      text-align: center;
     }
+
     .about-section p.lead {
+      text-align: center;
+      font-size: 1.1rem;
       color: var(--brand-dark);
-      font-weight: 500;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
     }
 
-    /* 🌸 Footer */
-    footer {
-    background: #001f4d;
-    color: white;
-    padding: 30px 0;
-}
-footer {
-    display: block;
-    unicode-bidi: isolate;
-}
+    /* Mission & Vision */
+    .mission-vision-box {
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      color: white;
+      background: var(--brand-primary);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
+    .mission-vision-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .mission-vision-box h4 {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    /* Director Profile */
+    .director-profile {
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 50px;
+      background: var(--gradient2);
+      color: var(--brand-dark);
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .director-profile:hover {
+      transform: translateY(-10px);
+    }
+
+    .director-profile img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 5px solid var(--brand-primary);
+      transition: transform 0.3s ease;
+    }
+
+    .director-profile img:hover {
+      transform: scale(1.05);
+    }
+
+    .director-profile h5 {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    /* Team Members */
+    .team-member {
+      text-align: center;
+      padding: 25px 20px;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .team-member img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid var(--brand-primary);
+      transition: transform 0.3s ease;
+    }
+
+    .team-member img:hover {
+      transform: scale(1.1);
+    }
+
+    .team-member h6 {
+      color: var(--brand-primary);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #001f4d;
+      color: white;
+      padding: 50px 0 30px 0;
+    }
+
+    footer a {
+      color: #f8f9fa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
     footer a:hover {
+      color: var(--brand-primary);
       text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- 🌸 Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">🌸 Transflower Store</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Categories</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="electronics.html">Electronics</a></li>
-              <li><a class="dropdown-item" href="fashion.html">Fashion</a></li>
-              <li><a class="dropdown-item" href="homedecor.html">Home Decor</a></li>
-            </ul>
-          </li>
           <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="btn btn-login ms-lg-2" href="login.html"><i class="bi bi-box-arrow-in-right me-1"></i>Login</a></li>
-          <form class="d-flex ms-lg-3 mt-2 mt-lg-0">
-          <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
-          <button class="btn btn-light" type="submit">Search</button>
-        </form>
+          <li class="nav-item"><a class="btn btn-login ms-2" href="login.html"><i class="bi bi-box-arrow-in-right me-1"></i>Login</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- 🌸 About Section -->
-  <div class="container about-section">
-    <h2 class="text-center mb-3">About Transflower Store</h2>
-    <p class="lead text-center">We bring together technology, design, and comfort — making modern living effortless.</p>
-    <p class="text-center">
-      Founded in 2025, <strong>Transflower Store</strong> offers an exclusive range of electronics, fashion, and home décor items that blend innovation with elegance.  
-      <br><br>
-      Our mission is to create a seamless shopping experience with products that enhance everyday life.  
-      We believe in sustainability, trust, and quality — ensuring every purchase blooms with satisfaction.
-    </p>
-  </div>
+  <!-- Hero Section -->
+  <section class="hero-about">
+    <h1>About Transflower Store</h1>
+    <p>Innovation, Design, and Comfort — making modern living effortless and enjoyable.</p>
+  </section>
 
-  <!-- 🌸 Footer -->
-  <footer class="pt-5 pb-3 mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold">About Transflower</h5>
-          <p>Delivering quality products with creativity, innovation, and trust — because your lifestyle deserves the best.</p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold">Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="catalog.html">Catalog</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-bold">Connect with Us</h5>
-          <div class="mb-2">
-            <a href="#"><i class="bi bi-facebook me-3"></i></a>
-            <a href="#"><i class="bi bi-twitter me-3"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-          </div>
-          <p class="mb-0"><i class="bi bi-envelope me-2"></i>support@transflower.in</p>
+  <!-- About Section -->
+  <section class="about-section container">
+    <h2>Who We Are</h2>
+    <p class="lead">Founded in 2025, <strong>Transflower Store</strong> provides a curated selection of electronics, fashion, and home décor items that blend innovation with style. We prioritize sustainability, trust, and quality in every product.</p>
+
+    <!-- Mission & Vision -->
+    <div class="row mt-5 g-4">
+      <div class="col-md-6">
+        <div class="mission-vision-box">
+          <h4>Our Mission</h4>
+          <p>Deliver innovative, high-quality products that enhance daily life while ensuring a sustainable and trustworthy shopping experience.</p>
         </div>
       </div>
-      <hr class="border-light">
-      <div class="text-center">
-        <small>© 2025 Transflower Store. All Rights Reserved.</small>
+      <div class="col-md-6">
+        <div class="mission-vision-box">
+          <h4>Our Vision</h4>
+          <p>To become the leading lifestyle and e-commerce brand in India, recognized for creativity, customer satisfaction, and excellence.</p>
+        </div>
       </div>
+    </div>
+
+    <!-- Director Profile -->
+    <div class="director-profile mt-5">
+      <img src="images/sir.jpg" alt="Director Profile">
+      <h5>Ravi Tambade</h5>
+      <p>Founder & Director</p>
+      <p>Leading Transflower Store with passion, blending innovation, design, and customer-first values.</p>
+    </div>
+
+    <!-- Team Members -->
+    <h3 class="text-center mt-5 mb-4">Meet Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="team-member">
+          <img src="images/kajal.jpg" alt="Team Member">
+          <h6>Kajal Ghule</h6>
+          <p>Product Manager</p>
+          <p>Ensures innovative and high-quality products for our customers.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="team-member">
+          <img src="images/rutuja.jpg" alt="Team Member">
+          <h6>Rutuja Mokale</h6>
+          <p>Marketing Lead</p>
+          <p>Drives marketing strategies and connects with the right audience effectively.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="team-member">
+          <img src="images/sanika.jpg" alt="Team Member">
+          <h6>Sanika Bhor</h6>
+          <p>Design Head</p>
+          <p>Leads design team to craft visually stunning, user-friendly products.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 Transflower Store. All Rights Reserved.</p>
+      <p>
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="catalog.html">Shop</a>
+      </p>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
