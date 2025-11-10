@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Decor | Transflower Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
-             background: linear-gradient(to right, #fff5f7, #ffe6f0);
+      background: linear-gradient(to right, #fff5f7, #ffe6f0);
     }
-    .product-card img {
-      height: 220px;
+    .card img {
+      height: 200px;
       object-fit: cover;
     }
-    .product-card:hover {
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
       transform: translateY(-5px);
-      transition: 0.3s;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -34,9 +37,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-              Categories
-            </a>
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Categories</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="electronics.html">Electronics</a></li>
               <li><a class="dropdown-item" href="fashion.html">Fashion</a></li>
@@ -50,173 +51,199 @@
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <div class="container text-center mt-4">
-    <h2 class="fw-bold text-primary mb-3">🏡 Home Decor Collection</h2>
-    <p class="text-muted">Beautify your home with our elegant and modern decor products.</p>
-  </div>
-
-  <!-- Product Grid -->
-  <div class="container my-5">
+  <!-- Home Decor Product Section -->
+  <div class="container mt-5">
+    <h3 class="text-center mb-4 fw-bold text-primary">Home Decor Collection</h3>
     <div class="row g-4">
 
-      <!-- 16 Home Decor Products -->
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1565538810643-15ad6114b25d?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Table Lamp">
+      <!-- 1 Table Lamp -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1565538810643-15ad6114b25d" class="card-img-top" alt="Table Lamp">
           <div class="card-body text-center">
-            <h6 class="card-title">Table Lamp</h6>
-            <p class="text-primary fw-bold">$35</p>
+            <h5>Table Lamp</h5>
+            <p>₹2,899</p>
+            <a href="cart.html?name=Table%20Lamp&price=2899&img=https://images.unsplash.com/photo-1565538810643-15ad6114b25d" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Wall Clock">
+      <!-- 2 Wall Clock -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365" class="card-img-top" alt="Wall Clock">
           <div class="card-body text-center">
-            <h6 class="card-title">Wall Clock</h6>
-            <p class="text-primary fw-bold">$29</p>
+            <h5>Wall Clock</h5>
+            <p>₹1,999</p>
+            <a href="cart.html?name=Wall%20Clock&price=1999&img=https://images.unsplash.com/photo-1556020685-ae41abfc9365" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1560185127-6ed189bf04bb?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Indoor Plant">
+      <!-- 3 Indoor Plant -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1560185127-6ed189bf04bb" class="card-img-top" alt="Indoor Plant">
           <div class="card-body text-center">
-            <h6 class="card-title">Indoor Plant</h6>
-            <p class="text-primary fw-bold">$19</p>
+            <h5>Indoor Plant</h5>
+            <p>₹899</p>
+            <a href="cart.html?name=Indoor%20Plant&price=899&img=https://images.unsplash.com/photo-1560185127-6ed189bf04bb" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Wall Painting">
+      <!-- 4 Wall Painting -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5" class="card-img-top" alt="Wall Painting">
           <div class="card-body text-center">
-            <h6 class="card-title">Wall Painting</h6>
-            <p class="text-primary fw-bold">$89</p>
+            <h5>Wall Painting</h5>
+            <p>₹6,499</p>
+            <a href="cart.html?name=Wall%20Painting&price=6499&img=https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1584267385258-f29b9b5d56f9?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Scented Candle Set">
+      <!-- 5 Scented Candle Set -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1584267385258-f29b9b5d56f9" class="card-img-top" alt="Scented Candle Set">
           <div class="card-body text-center">
-            <h6 class="card-title">Scented Candle Set</h6>
-            <p class="text-primary fw-bold">$22</p>
+            <h5>Scented Candle Set</h5>
+            <p>₹1,299</p>
+            <a href="cart.html?name=Scented%20Candle%20Set&price=1299&img=https://images.unsplash.com/photo-1584267385258-f29b9b5d56f9" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Cushion Set">
+      <!-- 6 Cushion Set -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="card-img-top" alt="Cushion Set">
           <div class="card-body text-center">
-            <h6 class="card-title">Cushion Set</h6>
-            <p class="text-primary fw-bold">$45</p>
+            <h5>Cushion Set</h5>
+            <p>₹3,499</p>
+            <a href="cart.html?name=Cushion%20Set&price=3499&img=https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1598300056483-7f7a3d4b6a34?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Vase">
+      <!-- 7 Vase -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1598300056483-7f7a3d4b6a34" class="card-img-top" alt="Vase">
           <div class="card-body text-center">
-            <h6 class="card-title">Vase</h6>
-            <p class="text-primary fw-bold">$30</p>
+            <h5>Vase</h5>
+            <p>₹1,499</p>
+            <a href="cart.html?name=Vase&price=1499&img=https://images.unsplash.com/photo-1598300056483-7f7a3d4b6a34" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Curtain Set">
+      <!-- 8 Curtain Set -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" class="card-img-top" alt="Curtain Set">
           <div class="card-body text-center">
-            <h6 class="card-title">Curtain Set</h6>
-            <p class="text-primary fw-bold">$65</p>
+            <h5>Curtain Set</h5>
+            <p>₹4,299</p>
+            <a href="cart.html?name=Curtain%20Set&price=4299&img=https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Carpet Rug">
+      <!-- 9 Carpet Rug -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="card-img-top" alt="Carpet Rug">
           <div class="card-body text-center">
-            <h6 class="card-title">Carpet Rug</h6>
-            <p class="text-primary fw-bold">$99</p>
+            <h5>Carpet Rug</h5>
+            <p>₹7,999</p>
+            <a href="cart.html?name=Carpet%20Rug&price=7999&img=https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Photo Frame">
+      <!-- 10 Photo Frame -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5" class="card-img-top" alt="Photo Frame">
           <div class="card-body text-center">
-            <h6 class="card-title">Photo Frame</h6>
-            <p class="text-primary fw-bold">$25</p>
+            <h5>Photo Frame</h5>
+            <p>₹899</p>
+            <a href="cart.html?name=Photo%20Frame&price=899&img=https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Wall Mirror">
+      <!-- 11 Wall Mirror -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="card-img-top" alt="Wall Mirror">
           <div class="card-body text-center">
-            <h6 class="card-title">Wall Mirror</h6>
-            <p class="text-primary fw-bold">$70</p>
+            <h5>Wall Mirror</h5>
+            <p>₹5,499</p>
+            <a href="cart.html?name=Wall%20Mirror&price=5499&img=https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1616628182501-1d5e91720512?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Wooden Shelf">
+      <!-- 12 Wooden Shelf -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1616628182501-1d5e91720512" class="card-img-top" alt="Wooden Shelf">
           <div class="card-body text-center">
-            <h6 class="card-title">Wooden Shelf</h6>
-            <p class="text-primary fw-bold">$55</p>
+            <h5>Wooden Shelf</h5>
+            <p>₹3,999</p>
+            <a href="cart.html?name=Wooden%20Shelf&price=3999&img=https://images.unsplash.com/photo-1616628182501-1d5e91720512" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1616628182501-1d5e91720512?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Chandelier">
+      <!-- 13 Chandelier -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1616628182501-1d5e91720512" class="card-img-top" alt="Chandelier">
           <div class="card-body text-center">
-            <h6 class="card-title">Chandelier</h6>
-            <p class="text-primary fw-bold">$120</p>
+            <h5>Chandelier</h5>
+            <p>₹9,999</p>
+            <a href="cart.html?name=Chandelier&price=9999&img=https://images.unsplash.com/photo-1616628182501-1d5e91720512" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Home Clock">
+      <!-- 14 Home Clock -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" class="card-img-top" alt="Home Clock">
           <div class="card-body text-center">
-            <h6 class="card-title">Home Clock</h6>
-            <p class="text-primary fw-bold">$28</p>
+            <h5>Home Clock</h5>
+            <p>₹1,499</p>
+            <a href="cart.html?name=Home%20Clock&price=1499&img=https://images.unsplash.com/photo-1505691938895-1758d7feb511" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1616628182501-1d5e91720512?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Decorative Basket">
+      <!-- 15 Decorative Basket -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1616628182501-1d5e91720512" class="card-img-top" alt="Decorative Basket">
           <div class="card-body text-center">
-            <h6 class="card-title">Decorative Basket</h6>
-            <p class="text-primary fw-bold">$18</p>
+            <h5>Decorative Basket</h5>
+            <p>₹999</p>
+            <a href="cart.html?name=Decorative%20Basket&price=999&img=https://images.unsplash.com/photo-1616628182501-1d5e91720512" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="card product-card shadow-sm">
-          <img src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Wall Art">
+      <!-- 16 Wall Art -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5" class="card-img-top" alt="Wall Art">
           <div class="card-body text-center">
-            <h6 class="card-title">Wall Art</h6>
-            <p class="text-primary fw-bold">$90</p>
+            <h5>Wall Art</h5>
+            <p>₹6,999</p>
+            <a href="cart.html?name=Wall%20Art&price=6999&img=https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5" class="btn btn-primary btn-sm">Add to Cart</a>
           </div>
         </div>
       </div>
