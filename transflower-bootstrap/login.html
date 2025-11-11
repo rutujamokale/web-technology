@@ -10,22 +10,28 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
-    /* Body Gradient Background */
+    /* 🌸 Body Background with Pink Overlay */
     body {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background: linear-gradient(135deg, #f5a6b9, #ffe6f0, #a1c4fd);
       font-family: 'Segoe UI', sans-serif;
-
       margin: 0;
+
+      /* Background image + pink overlay */
+      background-image:
+        linear-gradient(rgba(255, 192, 203, 0.6), rgba(255, 182, 193, 0.6)),
+        url("https://img.freepik.com/premium-vector/green-nature-background-with-flowers_176503-1504.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
 
-    /* Navbar Styling */
+    /* 🌸 Navbar Styling */
     nav.navbar {
-      background: linear-gradient(90deg, #ff416c, #ff4b2b);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      background: linear-gradient(90deg, #ff1493, #ff69b4);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     nav.navbar .nav-link {
@@ -34,10 +40,10 @@
     }
 
     nav.navbar .nav-link:hover {
-      color: #ffd6e0 !important;
+      color: #ffe6f0 !important;
     }
 
-    /* Glassmorphism Card */
+    /* 🌸 Glassmorphism Login Card */
     .login-container {
       flex: 1;
       display: flex;
@@ -48,59 +54,71 @@
 
     .login-card {
       background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(20px);
       border-radius: 20px;
       padding: 2rem;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.3);
       width: 100%;
       max-width: 400px;
+      animation: fadeIn 1s ease-in;
     }
 
     .login-card .card-header {
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
       border-radius: 15px 15px 0 0;
       color: white;
       text-align: center;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      padding: 1rem;
     }
 
+    /* 🌸 Input Focus Effects */
     .form-control:focus {
-      border-color: #ff416c;
-      box-shadow: 0 0 5px rgba(255,65,108,0.5);
+      border-color: #ff69b4;
+      box-shadow: 0 0 5px rgba(255,105,180,0.5);
     }
 
+    /* 🌸 Button Styling */
     .btn-login {
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
       color: white;
       font-weight: 600;
       transition: all 0.3s ease;
+      border: none;
     }
 
     .btn-login:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255,65,108,0.4);
+      box-shadow: 0 5px 15px rgba(255,105,180,0.4);
     }
 
-    /* Footer Styling */
+    /* 🌸 Footer */
     footer {
       background: #e91e63;
       color: white;
-      padding: 20px 0;
+      padding: 15px 0;
       text-align: center;
       font-weight: 500;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
     }
 
     /* Toast positioning */
     .toast-container {
       z-index: 2000;
     }
+
+    /* 🌸 Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- 🌸 Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-flower1 me-2"></i>Transflower</a>
@@ -123,7 +141,7 @@
   </div>
 </nav>
 
-<!-- Login Form Card -->
+<!-- 🌸 Login Form Card -->
 <div class="login-container">
   <div class="login-card">
     <div class="card-header">Welcome Back 🌼</div>
@@ -145,7 +163,7 @@
   </div>
 </div>
 
-<!-- Toast -->
+<!-- 🌸 Toast -->
 <div class="position-fixed bottom-0 end-0 p-3 toast-container">
   <div id="loginToast" class="toast align-items-center text-bg-success border-0" role="alert">
     <div class="d-flex">
@@ -155,12 +173,12 @@
   </div>
 </div>
 
-<!-- Footer -->
+<!-- 🌸 Footer -->
 <footer>
-  &copy; 2025 Transflower Store | Designed with 💜 using Bootstrap
+  &copy; 2025 Transflower Store | Designed with 💖 using Bootstrap
 </footer>
 
-<!-- Scripts -->
+<!-- 🌸 Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 (() => {
