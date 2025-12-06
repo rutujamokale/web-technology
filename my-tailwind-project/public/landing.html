@@ -38,8 +38,9 @@
                     contact us
                 </button>
 
-                <button class="bg-purple-800 text-white rounded-xl py-2 hover:bg-pink-500 focus:outline-5 ">save change</button>
+                <button class="bg-purple-800 text-white rounded-xl py-2 hover:bg-pink-500 focus:outline-5 focus:outline-red-500 ">save change</button>
             </div>
+   
         </div>
 
         <div class="flex justify-end ">
@@ -58,9 +59,50 @@
     <p class="text-gray-500 dark:text-gray-400">You have a new message!</p>
   </div>
 </div>
+        <ul role="list">
 
+   
+    <li class="flex py-4 first:pt-0 last:pb-0">
+      <img class="h-10 w-10 rounded-full" src={person.imageUrl} alt="" />
+      <div class="ml-3 overflow-hidden">
+        <p class="text-sm font-medium text-gray-900 dark:text-white">{person.name}</p>
+        <p class="truncate text-sm text-gray-500 dark:text-gray-400">{person.email}</p>
+      </div>
+    </li>
 
+</ul>
     </div>
+    <label
+  class="has-checked:bg-indigo-50 has-checked:text-indigo-900 has-checked:ring-indigo-200 dark:has-checked:bg-indigo-950 dark:has-checked:text-indigo-200 dark:has-checked:ring-indigo-900 ..."
+>
+  <svg fill="currentColor">
+    <!-- ... -->
+  </svg>
+  Google Pay
+  <input type="radio" class="checked:border-indigo-500 ..." />
+</label>
+<div class="mx-auto max-w-md overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl">
+  <div class="md:flex">
+    <div class="md:shrink-0">
+      <img
+        class="h-48 w-full object-cover md:h-full md:w-48"
+        src="/img/building.jpg"
+        alt="Modern building architecture"
+      />
+    </div>
+    <div class="p-8">
+      <div class="text-lg font-semibold tracking-wide text-indigo-500 uppercase">Company retreats</div>
+      <a href="#" class="mt-1 block text-lg leading-tight font-medium text-black hover:underline">
+        Incredible accommodation for your team
+      </a>
+      <p class="mt-2 text-gray-500">
+        Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of
+        places to do just that.
+      </p>
+    </div>
+  </div>
+</div>
+
 </main>
 
     
