@@ -14,7 +14,6 @@
     "tailwindcss": "^4.1.17",
     "vite": "^7.2.4"
   },
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "baseline-browser-mapping": "^2.9.0",
@@ -38,5 +37,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tailwind Single-File Demo</title>
+  <!-- Tailwind Play CDN (good for demos / quick prototyping) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Optional: simple Tailwind config for this demo (adds a custom color)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f7ff',
+              500: '#6366f1',
+              700: '#4f46e5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* small helper to constrain content width in the demo */
+    .content-max { max-width: 1100px; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-white border-b">
+    <div class="mx-auto content-max px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <a href="#" class="inline-flex items-center gap-2">
+            <div class="h-10 w-10 rounded-lg bg-brand-500 flex items-center justify-center text-white font-bold">TE</div>
+            <span class="text-lg font-semibold">Tailwind Demo</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-1 text-sm text-gray-600">
+            <a class="px-3 py-2 hover:text-gray-900" href="#features">Features</a>
+            <a class="px-3 py-2 hover:text-gray-900" href="#examples">Examples</a>
+            <a class="px-3 py-2 hover:text-gray-900" href="#pricing">Pricing</a>
+            <a class="px-3 py-2 hover:text-gray-900" href="#contact">Contact</a>
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="darkToggle" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-md border text-sm">Toggle Dark</button>
+          <a href="#" class="inline-flex items-center px-4 py-2 bg-brand-500 text-white rounded-md text-sm shadow-sm hover:opacity-95">Get started</a>
+
+          <!-- Mobile menu button -->
+          <button id="mobileBtn" class="md:hidden p-2 rounded-md focus:outline-none focus:ring">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile nav -->
+      <div id="mobileNav" class="md:hidden hidden py-2">
+        <a class="block px-2 py-2 rounded hover:bg-gray-100" href="#features">Features</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-100" href="#examples">Examples</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-100" href="#pricing">Pricing</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-100" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-12">
+    <div class="mx-auto content-max px-4 sm:px-6 lg:px-8">
+      <!-- Hero -->
+      <section class="bg-gradient-to-r from-white via-indigo-50 to-white rounded-2xl p-8 md:p-12 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Beautiful UI, built with Tailwind</h1>
+            <p class="mt-4 text-gray-600">A single-file example showing a responsive header, hero, feature cards, and a footer — ready to copy, modify, and use.</p>
+
+            <div class="mt-6 flex gap-3">
+              <a href="#examples" class="inline-flex items-center px-5 py-3 bg-brand-500 text-white rounded-md shadow-sm">See examples</a>
+              <a href="#" class="inline-flex items-center px-5 py-3 border rounded-md text-sm">Learn more</a>
+            </div>
+
+            <div class="mt-6 text-sm text-gray-500">Works in any modern browser — no build step required for this demo.</div>
+          </div>
+
+          <div class="flex justify-center md:justify-end">
+            <div class="w-full max-w-md">
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <h3 class="font-semibold">Quick signup</h3>
+                <form class="mt-4 grid gap-3">
+                  <input class="px-3 py-2 border rounded-md w-full" placeholder="Full name" />
+                  <input class="px-3 py-2 border rounded-md w-full" placeholder="Email" />
+                  <button class="px-4 py-2 bg-brand-500 text-white rounded-md">Create account</button>
+                </form>
+                <p class="mt-3 text-xs text-gray-500">No credit card required.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="mt-10">
+        <h2 class="text-2xl font-semibold">Features</h2>
+        <p class="mt-2 text-gray-600">Handy utilities and ready-made patterns using Tailwind's utility classes.</p>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="p-6 bg-white rounded-lg shadow-sm">
+            <h3 class="font-semibold">Responsive layout</h3>
+            <p class="mt-2 text-sm text-gray-600">Design that adapts to any screen size without writing custom CSS.</p>
+          </article>
+
+          <article class="p-6 bg-white rounded-lg shadow-sm">
+            <h3 class="font-semibold">Component-friendly</h3>
+            <p class="mt-2 text-sm text-gray-600">Compose small utility classes into complex components with predictable results.</p>
+          </article>
+
+          <article class="p-6 bg-white rounded-lg shadow-sm">
+            <h3 class="font-semibold">Easy theming</h3>
+            <p class="mt-2 text-sm text-gray-600">Use Tailwind's configuration to create brand tokens and reuse them across your UI.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Examples (cards) -->
+      <section id="examples" class="mt-12">
+        <h2 class="text-2xl font-semibold">Example cards</h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-semibold">Card title</h3>
+              <p class="mt-2 text-sm text-gray-600">Short description showing how a card can look with Tailwind utilities.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-brand-500">Action</span>
+                <button class="text-sm px-3 py-1 border rounded">Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=efgh" alt="" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-semibold">Another card</h3>
+              <p class="mt-2 text-sm text-gray-600">Replace the image and copy to match your project needs.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-brand-500">Action</span>
+                <button class="text-sm px-3 py-1 border rounded">Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ijkl" alt="" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-semibold">Third card</h3>
+              <p class="mt-2 text-sm text-gray-600">Quickly scaffold cards for galleries, pricing, or team members.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-brand-500">Action</span>
+                <button class="text-sm px-3 py-1 border rounded">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="mt-12">
+        <h2 class="text-2xl font-semibold">Pricing</h2>
+        <p class="mt-2 text-gray-600">Simple pricing grid with clear call-to-action buttons.</p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 bg-white rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold">Basic</h3>
+            <p class="mt-4 text-3xl font-bold">Free</p>
+            <ul class="mt-4 text-sm space-y-2 text-gray-600">
+              <li>1 project</li>
+              <li>Community support</li>
+            </ul>
+            <button class="mt-6 w-full px-4 py-2 border rounded-md">Choose</button>
+          </div>
+
+          <div class="p-6 bg-white rounded-lg shadow-sm border-2 border-brand-500">
+            <h3 class="text-lg font-semibold">Pro</h3>
+            <p class="mt-4 text-3xl font-bold">₹799 / mo</p>
+            <ul class="mt-4 text-sm space-y-2 text-gray-600">
+              <li>Unlimited projects</li>
+              <li>Email support</li>
+            </ul>
+            <button class="mt-6 w-full px-4 py-2 bg-brand-500 text-white rounded-md">Choose</button>
+          </div>
+
+          <div class="p-6 bg-white rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold">Enterprise</h3>
+            <p class="mt-4 text-3xl font-bold">Custom</p>
+            <ul class="mt-4 text-sm space-y-2 text-gray-600">
+              <li>Dedicated support</li>
+              <li>Single sign-on</li>
+            </ul>
+            <button class="mt-6 w-full px-4 py-2 border rounded-md">Contact</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / CTA -->
+      <section id="contact" class="mt-12 mb-12">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 class="text-lg font-semibold">Ready to build?</h3>
+              <p class="mt-1 text-gray-600">Copy this file, edit the content, and use it as a starting point for your project.</p>
+            </div>
+            <div>
+              <a class="inline-block px-6 py-3 bg-brand-500 text-white rounded-md">Start a project</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t bg-white">
+    <div class="mx-auto content-max px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <p class="text-sm text-gray-600">© 2025 Tailwind Demo — built for learning</p>
+      <div class="flex items-center gap-3 text-sm text-gray-600">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileBtn')
+    const mobileNav = document.getElementById('mobileNav')
+    mobileBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden')
+    })
+
+    // Dark mode toggle (adds/removes 'dark' on html element)
+    const darkToggle = document.getElementById('darkToggle')
+    darkToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark')
+      // Toggle body background for demo clarity
+      if (document.documentElement.classList.contains('dark')) {
+        document.body.classList.remove('bg-gray-50')
+        document.body.classList.add('bg-gray-900', 'text-gray-100')
+      } else {
+        document.body.classList.add('bg-gray-50')
+        document.body.classList.remove('bg-gray-900', 'text-gray-100')
+      }
+    })
+  </script>
+</body>
+</html>
