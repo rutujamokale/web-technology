@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Basics</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8">
+
+  <!-- ================= HEADER ================= -->
+  <h1 class="text-3xl font-bold text-blue-500" >Tailwind CSS Basics</h1>
+  <p class="text-gray-700 mb-8">A quick reference of all important Tailwind utilities.</p>
+
+  <section class="mb-10">
+    <h1 class="text-2xl font-bold mb-3 ">Colors</h1> 
+     <div class="flex gap-5 ">
+     <div class="w-20 h-20 bg-blue-500 rounded"></div> 
+     <div class=" w-20 h-20 bg-red-500 rounded"></div>
+     <div class="w-20 h-20 bg-green-500 rounded"></div>
+   <div class="w-20 h-20 bg-pink-500 rounded"></div>
+
+    </div>
+
+  </section>
+
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold ">Text</h2>
+    <p class="text-sm  text-gray-600">Small text example </p>
+    <p class="text-base ">Normal text example</p>
+    <p class="text-xl  font-semibold text-purple-600"> Large text example</p>
+  </section>
+
+  <!-- ================= BUTTONS ================= -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Buttons</h2>
+    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Primary</button>
+    <button class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Success</button>
+    <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">Danger</button>
+  </section>
+
+  <!-- ================= CARD ================= -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Card</h2>
+    <div class="bg-white p-6 rounded-lg shadow-lg w-64">
+      <h3 class="text-xl font-bold mb-2">Simple Card</h3>
+      <p class="text-gray-600">This is a basic Tailwind card example.</p>
+    </div>
+  </section>
+
+  <!-- ================= GRID ================= -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Grid Layout</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-blue-200 p-4 rounded">Grid 1</div>
+      <div class="bg-blue-300 p-4 rounded">Grid 2</div>
+      <div class="bg-blue-400 p-4 rounded">Grid 3</div>
+    </div>
+  </section>
+
+  <!-- ================= FLEXBOX ================= -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Flexbox</h2>
+    <div class="flex gap-4">
+      <div class="bg-purple-300 p-4 rounded">Flex 1</div>
+      <div class="bg-purple-400 p-4 rounded">Flex 2</div>
+      <div class="bg-purple-500 p-4 rounded">Flex 3</div>
+    </div>
+  </section>
+
+  <!-- ================= FORMS ================= -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Form Elements</h2>
+    <form class="space-y-4 w-64">
+      <input type="text" placeholder="Enter name" class="w-full border border-gray-300 p-2 rounded">
+      <input type="email" placeholder="Enter email" class="w-full border border-gray-300 p-2 rounded">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full">Submit</button>
+    </form>
+  </section>
+
+  <!-- ================= SPACING ================= -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Spacing</h2>
+    <div class="bg-gray-200 p-6 mb-4">Padding (p-6)</div>
+    <div class="bg-gray-300 m-6 p-4">Margin (m-6)</div>
+  </section>
+
+  <!-- ================= BORDERS ================= -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-3">Borders & Shadows</h2>
+    <div class="border border-gray-500 p-4 w-64 mb-4">Border Example</div>
+    <div class="shadow-lg p-4 w-64 bg-white rounded">Shadow Example</div>
+  </section>
+
+</body>
+</html>
